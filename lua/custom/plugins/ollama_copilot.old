@@ -1,0 +1,57 @@
+return {
+  {
+    'Jacob411/Ollama-Copilot',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'hrsh7th/nvim-cmp', -- Ollama-Copilot is a cmp source
+    },
+    opts = {
+      model_name = 'codellama:7b', -- <<< IMPORTANT: Set your chosen local model here
+      -- model_name = "phi3:mini",  -- Or this one if you prefer phi3:mini
+
+      stream_suggestion = true, -- Crucial for real-time ghost text
+      filetypes = {
+        'python',
+        'javascript',
+        'typescript',
+        'lua',
+        'c',
+        'cpp',
+        'java',
+        'go',
+        'rust',
+        'sh',
+        'bash',
+        'markdown',
+        'html',
+        'css', -- Add any other filetypes you work with
+      },
+      ollama_model_opts = {
+        num_predict = 128, -- How many tokens the AI tries to generate. Adjust for speed/length.
+        temperature = 0.2, -- Lower for more deterministic, code-like suggestions.
+        -- top_k = 40,        -- Optional: Affects randomness.
+        -- top_p = 0.9,       -- Optional: Affects randomness.
+      },
+      -- Optional: Enable logging for debugging
+      -- enable_logging = true,
+      -- log_file = vim.fn.stdpath('cache') .. '/ollama-copilot.log',
+    },
+    -- Load this plugin when these filetypes are opened, or when nvim-cmp is loaded
+    ft = {
+      'python',
+      'javascript',
+      'typescript',
+      'lua',
+      'c',
+      'cpp',
+      'java',
+      'go',
+      'rust',
+      'sh',
+      'bash',
+      'markdown',
+      'html',
+      'css',
+    },
+  },
+}

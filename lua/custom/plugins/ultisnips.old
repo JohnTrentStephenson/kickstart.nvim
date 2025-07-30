@@ -1,0 +1,10 @@
+return {
+  'SirVer/ultisnips',
+  lazy = false,
+  init = function()
+    --     vim.g.UltiSnipsExpandTrigger = '<tab>'
+    --     vim.g.UltiSnipsJumpForwardTrigger = '<c-b>'
+    --     vim.g.UltiSnipsJumbBackwardTrigger = '<c-z>'
+    --     vim.g.UltiSnipsEditSplit = 'vertical'
+  end,
+}
